@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Question extends Component {
   constructor() {
@@ -11,9 +11,9 @@ class Question extends Component {
     const { question } = this.props;
     const { userAnswerIndex } = this.state;
     if (question.answers[userAnswerIndex].isCorrect) {
-      console.log("yay correct");
+      console.log('yay correct');
     } else {
-      console.log("boo you bad");
+      console.log('boo you bad');
     }
     event.preventDefault();
   }
@@ -27,30 +27,27 @@ class Question extends Component {
     return (
       <div
         style={{
-          border: "2px solid black",
-          borderRadius: "3px",
-          width: "40%",
-          margin: "auto",
-          padding: "20px"
+          border: '2px solid black',
+          borderRadius: '3px',
+          width: '40%',
+          margin: 'auto',
+          padding: '20px'
         }}
       >
-        <h4 style={{ margin: "0" }}>{question.question}</h4>
+        <h4 style={{ margin: '0' }}>{question.question}</h4>
         <form onSubmit={event => this.handleSubmit(event)}>
           <fieldset
             style={{
-              display: "inline-block",
-              margin: "0 auto",
-              textAlign: "right",
-              border: "none"
+              display: 'inline-block',
+              margin: '0 auto',
+              textAlign: 'right',
+              border: 'none'
             }}
           >
             {question.answers.map((answer, i) => {
               return (
                 <div>
-                  <label
-                    htmlFor={i}
-                    style={{ display: "block", margin: "5px" }}
-                  >
+                  <label htmlFor={i} style={{ display: 'block', margin: '5px' }}>
                     {answer.answer}
                     <input
                       type="radio"
@@ -66,7 +63,7 @@ class Question extends Component {
               );
             })}
           </fieldset>
-          <button type="submit" style={{ display: "block", margin: "0 auto" }}>
+          <button type="submit" style={{ display: 'block', margin: '0 auto' }}>
             Submit
           </button>
         </form>

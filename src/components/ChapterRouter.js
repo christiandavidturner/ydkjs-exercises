@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { Link, Route } from "react-router-dom";
-import ChapterHome from "./ChapterHome";
-import Question from "./Question";
+import React, { Component } from 'react';
+import { Link, Route } from 'react-router-dom';
+import ChapterHome from './ChapterHome';
+import Question from './Question';
 
 class ChapterRouter extends Component {
   render() {
@@ -9,11 +9,8 @@ class ChapterRouter extends Component {
 
     return (
       <div>
-        <Link
-          style={{ textDecoration: "none", color: "black" }}
-          to={bookUrl + chapter.url}
-        >
-          <h3 style={{ fontSize: "24px" }}>{chapter.title}</h3>
+        <Link style={{ textDecoration: 'none', color: 'black' }} to={bookUrl + chapter.url}>
+          <h3 style={{ fontSize: '24px' }}>{chapter.title}</h3>
         </Link>
         <Route
           exact
@@ -25,14 +22,8 @@ class ChapterRouter extends Component {
         {chapter.questions.map((question, index) => {
           return (
             <Route
-              path={bookUrl + chapter.url + "/q" + (index + 1)}
-              render={() => (
-                <Question
-                  baseUrl={bookUrl + chapter.url}
-                  index={index + 1}
-                  question={question}
-                />
-              )}
+              path={bookUrl + chapter.url + '/q' + (index + 1)}
+              render={() => <Question baseUrl={bookUrl + chapter.url} index={index + 1} question={question} />}
             />
           );
         })}

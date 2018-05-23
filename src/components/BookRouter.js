@@ -1,15 +1,15 @@
-import React, { Component } from "react";
-import BookHome from "./BookHome";
-import { Route, Link } from "react-router-dom";
-import ChapterRouter from "./ChapterRouter";
+import React, { Component } from 'react';
+import BookHome from './BookHome';
+import { Route, Link } from 'react-router-dom';
+import ChapterRouter from './ChapterRouter';
 
 class BookRouter extends Component {
   render() {
     const { book } = this.props;
     return (
       <div>
-        <Link style={{ textDecoration: "none", color: "black" }} to={book.url}>
-          <h2 style={{ fontSize: "40px" }}>{book.title}</h2>
+        <Link style={{ textDecoration: 'none', color: 'black' }} to={book.url}>
+          <h2 style={{ fontSize: '40px' }}>{book.title}</h2>
         </Link>
         <Route
           exact
@@ -22,13 +22,7 @@ class BookRouter extends Component {
           return (
             <Route
               path={book.url + chapter.url}
-              render={() => (
-                <ChapterRouter
-                  bookId={book.id}
-                  bookUrl={book.url}
-                  chapter={chapter}
-                />
-              )}
+              render={() => <ChapterRouter bookId={book.id} bookUrl={book.url} chapter={chapter} />}
             />
           );
         })}

@@ -1,21 +1,21 @@
 const Ch1Questions = [
   {
-    question: "How many expressions are in the following statement: a = b * 2;",
+    question: 'How many expressions are in the following statement: a = b * 2;',
     answers: [
       {
-        answer: "one",
+        answer: 'one',
         isCorrect: false
       },
       {
-        answer: "two",
+        answer: 'two',
         isCorrect: false
       },
       {
-        answer: "three",
+        answer: 'three',
         isCorrect: false
       },
       {
-        answer: "four",
+        answer: 'four',
         isCorrect: true
       }
     ]
